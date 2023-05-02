@@ -14,11 +14,35 @@ body {
 }
 
 #gameboard {
+    --grid-size: 4;
+    --cell-size: 20vmin;
+    --cell-gap: 2vmin;
+
     display: grid;
-    
+    grid-template-columns: repeat(var(--grid-size), var(--cell-size));
+    grid-template-rows: repeat(var(--grid-size), var(--cell-size));
+    background-color: lightgray;
+    gap: var(--cell-gap);
+    border-radius: 1vmin;
+    padding: var(--cell-gap);
+    position: relative;
 }
 
 .cell {
     background-color: white;
     border-radius: 1vmin;
+}
+
+.tile {
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: var(--cell-size);
+    height: var(--cell-size);
+    background-color: green;
+    border-radius: 1vmin;
+    top: calc(var(--y) * var(--cell-size) + var(--cell-gap) + var(--cell-gap));
+    left: ;
+    font-weight: bold;
 }
